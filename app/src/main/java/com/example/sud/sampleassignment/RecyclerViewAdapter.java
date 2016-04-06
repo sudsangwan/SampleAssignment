@@ -19,26 +19,26 @@ import java.util.List;
  * Adapter for displaying rows in recycler view vertically
  *
  */
-public class Recycler_View_Adapter extends RecyclerView.Adapter<View_Holder> {
+public class RecyclerViewAdapter extends RecyclerView.Adapter<ViewHolder> {
 
     List<Data> list = Collections.emptyList();
     Context context;
 
-    public Recycler_View_Adapter(List<Data> list, Context context) {
+    public RecyclerViewAdapter(List<Data> list, Context context) {
         this.list = list;
         this.context = context;
     }
 
     @Override
-    public View_Holder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.row_layout, parent, false);
-        View_Holder holder = new View_Holder(v);
+        ViewHolder holder = new ViewHolder(v);
         return holder;
     }
 
     @Override
-    public void onBindViewHolder(final View_Holder holder, final int position) {
+    public void onBindViewHolder(final ViewHolder holder, final int position) {
 
         // Name of the item
         holder.name.setText(list.get(position).name);
@@ -78,7 +78,7 @@ public class Recycler_View_Adapter extends RecyclerView.Adapter<View_Holder> {
         CustomPagerAdapter mCustomPagerAdapter = new CustomPagerAdapter(context, list.get(position).imageIds);
         holder.viewPager.setAdapter(mCustomPagerAdapter);
 
-        holder.viewPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+        holder.viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
 
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {

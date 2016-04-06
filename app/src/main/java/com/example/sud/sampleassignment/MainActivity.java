@@ -10,8 +10,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
+
+    private static final int VERTICAL_ITEM_SPACE = 30;
     RecyclerView recyclerView;
-    private Recycler_View_Adapter adapter;
+    private RecyclerViewAdapter adapter;
     Context context;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,8 +25,9 @@ public class MainActivity extends AppCompatActivity {
         List<Data> data = fill_with_data();
         recyclerView = (RecyclerView) findViewById(R.id.recyclerview);
         recyclerView.addItemDecoration(new SimpleDivider(context));
+        recyclerView.addItemDecoration(new SpacesItemDecoration(VERTICAL_ITEM_SPACE));
 
-        adapter = new Recycler_View_Adapter(data, getApplication());
+        adapter = new RecyclerViewAdapter(data, getApplication());
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
     }

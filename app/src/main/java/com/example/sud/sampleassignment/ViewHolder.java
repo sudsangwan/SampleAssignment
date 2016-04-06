@@ -10,7 +10,7 @@ import android.widget.TextView;
 /**
  * Created by Sudarshan on 05/04/16.
  */
-public class View_Holder extends RecyclerView.ViewHolder {
+public class ViewHolder extends RecyclerView.ViewHolder {
 
     TextView name;
     TextView price;
@@ -19,7 +19,7 @@ public class View_Holder extends RecyclerView.ViewHolder {
     ImageView leftArrow;
     ImageView rightArrow;
 
-    View_Holder(View itemView) {
+    ViewHolder(View itemView) {
         super(itemView);
         name = (TextView) itemView.findViewById(R.id.tvName);
         price = (TextView) itemView.findViewById(R.id.tvPrice);
