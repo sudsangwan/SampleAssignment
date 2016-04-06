@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" >
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="4dp" >
+
+  <android.support.v4.view.ViewPager
+      android:id="@+id/viewPager"
+      android:layout_width="match_parent"
+      android:layout_height="200dp"
+      android:background="#f244f1" >
+
+  </android.support.v4.view.ViewPager>
+
+    <TextView
+        android:id="@+id/tvName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="15sp"
+        android:textColor="@color/text_color"
+        android:textAppearance="?attr/textAppearanceListItem"
+        android:layout_gravity="center_horizontal" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="left"
+        android:layout_marginBottom="10dp" >
+
+        <TextView
+            android:id="@+id/tvQty"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:textSize="15sp"
+            android:textColor="@color/text_color"
+            android:textAppearance="?attr/textAppearanceListItem"
+            android:text="Qty :" />
+
+        <Spinner
+            android:id="@+id/spinner"
+            android:layout_width="60dp"
+            android:layout_height="fill_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_gravity="center_vertical" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="20dp"
+            android:layout_weight="1" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:text="$"
+            android:textColor="@color/text_color" />
+
+        <TextView
+            android:id="@+id/tvPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:textSize="15sp"
+            android:textColor="@color/text_color"
+            android:textAppearance="?attr/textAppearanceListItem" />
+
+    </LinearLayout>
+
+</LinearLayout>
+
+    <ImageView
+        android:id="@+id/ivLeftArrow"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:padding="10dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginTop="90dp"
+        android:layout_marginLeft="10dp"
+        android:src="@drawable/leftarrow"
+        android:scaleType="fitXY"
+        android:visibility="gone" />
+
+    <ImageView
+        android:id="@+id/ivRightArrow"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:padding="10dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="90dp"
+        android:layout_marginRight="10dp"
+        android:src="@drawable/rightarrow"
+        android:scaleType="fitXY" />
+
+</RelativeLayout>
