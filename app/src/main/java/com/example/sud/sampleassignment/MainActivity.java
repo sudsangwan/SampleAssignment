@@ -1,7 +1,9 @@
 package com.example.sud.sampleassignment;
 
 import android.content.Context;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -11,7 +13,6 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-    private static final int VERTICAL_ITEM_SPACE = 30;
     RecyclerView recyclerView;
     private RecyclerViewAdapter adapter;
     Context context;
@@ -24,8 +25,11 @@ public class MainActivity extends AppCompatActivity {
 
         List<Data> data = fill_with_data();
         recyclerView = (RecyclerView) findViewById(R.id.recyclerview);
-        recyclerView.addItemDecoration(new SimpleDivider(context));
-        recyclerView.addItemDecoration(new SpacesItemDecoration(VERTICAL_ITEM_SPACE));
+
+        // Divider between the two rows
+        Drawable divider = ContextCompat.getDrawable(this, R.drawable.line_divider);
+        RecyclerView.ItemDecoration dividerItemDecoration = new DividerItemDecoration(divider);
+        recyclerView.addItemDecoration(dividerItemDecoration);
 
         adapter = new RecyclerViewAdapter(data, getApplication());
         recyclerView.setAdapter(adapter);
