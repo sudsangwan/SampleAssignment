@@ -16,6 +16,7 @@ import java.util.ArrayList;
  * Adapter for displaying images in the viewpager.
  *
  */
+ //TODO : Display your images from here which you want to horizontolly scroll. Just keep the size of images same throughout.
 class CustomPagerAdapter extends PagerAdapter {
 
     Context mContext;
