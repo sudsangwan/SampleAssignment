@@ -1,5 +1,5 @@
 package com.example.sud.sampleassignment;
-
+//TODO : Change the package name
 import android.content.Context;
 import android.support.v4.view.ViewPager;
 import android.support.v7.widget.RecyclerView;
